@@ -1,0 +1,43 @@
+html, body {
+    background-image: url("../resources/background.jpg");
+    background-size: cover;
+    text-align: center;
+    font-family: Arial;
+}
+h1{
+    text-shadow: 1px 1px black;
+}
+#spacer{
+    height: 100px;
+}
+#index-container {
+    text-align: center;
+    margin: auto;
+    color: white;
+    width: 70%;
+    background: rgba(57, 67, 57, 0.6);
+    height: 400px;
+    /*padding: 15px;*/
+}
+#index-container.div{
+    text-align: center;
+}
+.link-btn{
+    width: 50%;
+    /*background-color: #00D9C0 !important;*/
+}
+label{
+    font-size: 22px;
+}
+.form-group{
+    margin: 25px auto;
+}
+#error{
+    color: red;
+    /*text-align: center;*/
+}
+a{
+    color: black;
+}
+
+
