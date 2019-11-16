@@ -29,19 +29,6 @@ elseif($user['password'] != $password) {
 }
 else{
     //login successful
-    echo "<form id='data-form' action='profile.php' method='POST'>
-        <input type='hidden' name='user_id' value=" . $user['user_id'] .">
-        </form><script>document.getElementById('data-form').submit();</script>";
+    setcookie('user', $username, time() + (86400 * 30), "/");
+    header("Location: home.html");
 }
-
-//}
-//
-//    // login successful
-////    header("Location: register.php?username=" . $username . "&error=already_exists");
-//        echo "<form id='data-form' action='profile.php' method='GET'>
-//        <input type='hidden' name='username' value=" . $username .">
-//        </form><script>document.getElementById('data-form').submit();</script>";
-//}
-//else{
-//    //login unsuccessful
-//}
