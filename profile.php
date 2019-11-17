@@ -10,7 +10,7 @@ if($mysqli->connect_errno) {
 // also assume all fields are filled
 $user_id = $_POST['user_id'];
 
-$statement = $mysqli->prepare("SELECT * FROM users WHERE user_id = ?;");
+$statement = $mysqli->prepare("SELECT * FROM users,  WHERE user_id = ?;");
 $statement->bind_param('s', $user_id);
 $executed = $statement->execute();
 if(!$executed){

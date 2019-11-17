@@ -1,0 +1,43 @@
+html, body {
+    background-image: url("../resources/pool.jpg");
+    background-size: cover;
+    font-family: Arial;
+}
+
+#spacer{
+    height: 25px;
+}
+#header{
+    color: white;
+    text-align: center;
+    text-shadow: black 2px 2px;
+    margin-bottom: 25px;
+}
+.container{
+    margin: auto;
+    color: white;
+    width: 90%;
+    background: rgba(57, 67, 57, 0.6);
+    background: rgba(35,48,67,0.6);
+    padding: 25px;
+}
+#category{
+    /*width: 50px;*/
+}
+
+#long_desc{
+    /*height: 200px;*/
+    /*height: ;*/
+}
+.container .row{
+    margin-bottom: 10px;
+    max-top: 10px;
+}
+#submit{
+    margin-top: 15px;
+}
+#error{
+    color: red;
+    font-weight: bold;
+    text-shadow: black 1px 1px;
+}

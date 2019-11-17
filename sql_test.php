@@ -8,3 +8,13 @@
     else{
         echo 'success!';
     }
+    $categories = ['Academic', 'Sports', 'Ethnic', 'Religious', 'Music', 'Greek Life', 'Competitive', 'Engineering'];
+//    $mysqli->query("DELETE FROM categories");
+
+    foreach ($categories as $cat){
+//        echo $cat;
+        $mysqli->query("INSERT INTO categories(category) VALUES('{$cat}')");
+    }
+
+    $result = $mysqli->query("SELECT category FROM categories;");
+    var_dump($result->fetch_assoc());

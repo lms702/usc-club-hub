@@ -61,7 +61,7 @@ if(isset($_GET['error'])){
         <div class="row form-group">
             <div class="col col-6">
                 <div id="error"><?php echo $error_msg; ?></div>
-                Don't have an account yet? <a href="login.php">Register here.</a>
+                Don't have an account yet? Then get rekt! <a href="login.php">Register here, or get rekt!.</a>
             </div>
             <div class="col col-6">
                 <button id="register-submit" type="submit" class="btn btn-light">Log in</button>

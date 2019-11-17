@@ -35,8 +35,9 @@
         if (!$executed) {
             echo $mysqli->errno;
         }
+        $newUser = $mysqli->query("SELECT FROM users WHERE username = {$username};")->fetch_assoc();
 //            exit();
 //      header("Location: login.php?username=" . $username);
-        setcookie('user', $username, time() + (86400 * 30), "/");
+        setcookie('user', $newUser['id'], time() + (86400 * 30), "/");
         header("Location: home.html");
     }

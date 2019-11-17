@@ -29,6 +29,6 @@ elseif($user['password'] != $password) {
 }
 else{
     //login successful
-    setcookie('user', $username, time() + (86400 * 30), "/");
+    setcookie('user_id', $user['id'], time() + (86400 * 30), "/");
     header("Location: home.html");
 }
