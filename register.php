@@ -12,6 +12,7 @@
             $error_msg = "Error: This username is taken!";
         }
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +26,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
 </head>
+<style>
+    body, html{
+        background-image: url("resources/20191117_051143.jpg");
+    }
+</style>
 <body>
 <div class="row" id="spacer">
     <div class="col col-2">
@@ -37,6 +43,7 @@
 <div class="container" id="index-container">
     <div class="row">
         <div class="col">
+            <br>
             <h1>Please register with your username and password!</h1>
 <!--            <h3> or you'll get rekt!</h3>-->
         </div>

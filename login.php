@@ -28,6 +28,11 @@ if(isset($_GET['error'])){
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
 </head>
+<style>
+    body, html{
+        background-image: url("resources/tennis.jpg");
+    }
+</style>
 <body>
 <div class="row" id="spacer">
     <div class="col col-2">
@@ -38,12 +43,13 @@ if(isset($_GET['error'])){
     <div class="col col-10"></div>
 </div>
 <div class="container" id="index-container">
+    <br>
     <div class="row">
         <div class="col">
             <h1>Please login with your username and password!</h1>
         </div>
     </div>
-    <div style="height: 15%;"></div>
+    <div style="height: 10%;"></div>
     <form class="form-horizontal" action="login-backend.php" method="POST" id="register-form">
         <div class="row form-group">
             <label for="username" class="col col-2 control-label">Username</label>
