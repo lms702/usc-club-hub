@@ -27,7 +27,7 @@
     <div id="header">
         <h1>Add a Club!</h1>
     </div>
-    <form action="add_club_backend.php" method="POST" id="form">
+    <form action="upload.php" method="POST" id="form" enctype="multipart/form-data">
     <div class="container">
         <div class="row">
             <label for="name" class="col-sm-3 col-form-label text-sm-right">What is the name of your club?</label>

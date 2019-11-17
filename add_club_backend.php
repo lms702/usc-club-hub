@@ -5,6 +5,10 @@
     $short_desc = $_POST['short_desc'];
     $long_desc = $_POST['long_desc'];
     $category = $_POST['category'];
+    $image_id = 1;
+    if(isset($_POST['image_id']) && !empty($_POST['image_id'])){
+        $image_id = $_POST['image_id'];
+    }
 
     require("config.php");
     $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
@@ -23,8 +27,6 @@
 //background-color: #000529;
 //background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-
-    $image_id = 1;
 
     $stmt = $mysqli->prepare("INSERT INTO clubs(user_id, name, short_desc, long_desc, category_id, image_id)".
     "VALUES(?, ?, ?, ?, ?, ?)");

@@ -1,11 +1,489 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="css/home.css">
+    <title>Home Page</title>
 </head>
 <body>
-    <h1>This is the home page</h1>
-    <h3>Ehsan take it away</h3>
+
+<script src = "js/jquery-3.4.1.js"> </script>
+
+
+<script>
+
+   $('.tile').on("click", function () {
+
+        let bigdiv = document.createElement('div');
+        bigdiv.style.backgroundColor = "black";
+        bigdiv.style.color = "white";
+        bigdiv.style.height = "500 px";
+        bigdiv.style.width = "100%";
+        let rows = this.parentNode.parentNode;
+        bigdiv.appendTo($('#' + rows));
+    });
+
+ // have to create the carousel
+    //then create the the large div
+    function funcReq(){ //generates carousel
+        //let divs = document.createElement("div");
+        $.ajax({
+            type: 'GET',
+            url: 'get_clubs.php',
+            dataType: 'json',
+            success: funcGen
+        });
+    }
+    function funcGen(data){
+        // console.log(results);
+        // data = JSON.parse(results);
+        console.log(data);
+        for(let category of data){
+            let der = $("<p class = \"der\">");
+            der.text(category.category);
+            der.appendTo($('#contain'));
+            let row = $('<div class = "row">');
+            row.appendTo($('#contain'));
+
+            let inner_row = $('<div class = "row__inner">');
+            inner_row.appendTo(row);
+            for(let club of category.clubs){
+                let name = club.name;
+                let theImage = club.image_path;
+                let shortDesc = club.short_desc;
+                let longDesc = club.long_desc;
+                let tile = $('<div class = "tile">');
+                tile.onclick = function(){
+                    let bigdiv = document.createElement('div');
+                    bigdiv.class = "bigdiv";
+                    bigdiv.style.backgroundColor = "black";
+                    bigdiv.style.color = "white";
+                    bigdiv.style.height = "500 px";
+                    bigdiv.style.width = "100%";
+                    let rows = this.parentNode.parentNode;
+                    bigdiv.append('<table><tr><td rowspan="1">&nbsp'+'<img src = "' + theImage + '"/>'
+                        + '</td><td>&nbsp <h1>'+ name +'</h1> <h5>'+ longDesc +'</h5></td></tr>');
+                    bigdiv.appendTo($('#' + rows));
+                    bigdiv.onclick = function(){
+                        bigdiv.remove();
+                    };
+                };
+                tile.appendTo(inner_row);
+
+                let tile_media = $('<div class = "tile__media">');
+                tile_media.appendTo(tile);
+
+                let image = $('<img class = "tile__img" src = "' + theImage  + '" alt = ""/>')  //check the slash
+                image.appendTo(tile_media);
+
+                let tex = $('<div class = "tile-text">');
+                tex.text(name);
+                tex.appendTo(tile_media);
+
+                let details = $('<div class = "tile__details">');
+                details.appendTo(tile);
+
+                let tile_title = $('<div class="tile__title">');
+                tile_title.text(name);
+                details.append(tile_title);
+
+                let title1 = $('<div class = "title2">');
+                title1.text(shortDesc);
+                title1.appendTo(details);
+
+                let title2 = $('<div class = "tile-title">' + name)
+                title2.appendTo(details);
+
+
+            }
+        }
+    }
+
+    function close_it(){
+        bigdiv.visibility = "hidden";
+    }
+
+</script>
+
+
+<div id="contain">
+    <h1 class = center>Welcome To Club Hub</h1>
+    <br>
+    <h1 class = center2>Find What Club Suits You!</h1>
+    <br>
+
+    <script>funcReq(); </script>
+
+    <p class = "der">Sports</p>
+    <div class="row" id = "sports">
+        <div class="row__inner">
+
+            <div class="tile" id = "tile2">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt=""/>
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                    <div class = "ltext"></div>
+                </div>
+
+                <div class="tile__details">
+                    <div class="title2">
+                        short text about the club
+                    </div>
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-2.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                    <div class = "ltext"></div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-7.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-8.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-9.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-10.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-11.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-12.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <p class = "der">Spiritual</p>
+    <div class="row" id = "spiritual">
+        <div class="row__inner">
+
+            <div class="tile">
+                <div class="tile__media">
+
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-2.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-7.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-8.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-9.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-10.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-11.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-12.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <br>
+    <p class = "der">Spiritual</p>
+    <div class="row" id = "more">
+        <div class="row__inner">
+
+            <div class="tile" id = "tile3">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt=""/>
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+
+                <div class="tile__details">
+                    <div class="title2">
+                        short text about the club
+                    </div>
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-2.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-7.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-8.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-9.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-10.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-11.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile__media">
+                    <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-12.jpg" alt=""  />
+                    <div class = "tile-text">
+                        Top Gear
+                    </div>
+                </div>
+                <div class="tile__details">
+                    <div class="tile__title">
+                        Top Gear
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
 </body>
-</html>
