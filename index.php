@@ -15,7 +15,8 @@
         <div style="height: 20%"></div>
         <div class="row">
             <div class="col">
-                <h1>Welcome to my Tech.LA user registration flow!</h1>
+                <h1>You must be signed in to perform this action.</h1>
+                <h3>Sign in or create an account below :)</h3>
             </div>
         </div>
         <div style="height: 20%"></div>
@@ -28,11 +29,6 @@
             </div>
         </div>
         <div style="height: 20%"></div>
-        <div class="row">
-            <div class="col">
-                <p>Source code can be found on my GitHub repository <a href="https://github.com/lms702/spark_registration_flow">here</a>!</p>
-            </div>
-        </div>
     </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

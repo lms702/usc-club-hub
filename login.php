@@ -31,7 +31,7 @@ if(isset($_GET['error'])){
 <body>
 <div class="row" id="spacer">
     <div class="col col-2">
-        <a href="index.php">
+        <a href="home.html">
             <img src="resources/duck_icon.png" width="100%">
         </a>
     </div>
@@ -61,7 +61,8 @@ if(isset($_GET['error'])){
         <div class="row form-group">
             <div class="col col-6">
                 <div id="error"><?php echo $error_msg; ?></div>
-                Don't have an account yet? Then get rekt! <a href="login.php">Register here, or get rekt!.</a>
+                <br>
+                Don't have an account yet? <a href="login.php">Register here!.</a>
             </div>
             <div class="col col-6">
                 <button id="register-submit" type="submit" class="btn btn-light">Log in</button>
