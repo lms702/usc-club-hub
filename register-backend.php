@@ -35,9 +35,13 @@
         if (!$executed) {
             echo $mysqli->errno;
         }
-        $newUser = $mysqli->query("SELECT FROM users WHERE username = {$username};")->fetch_assoc();
+        $stmt = $mysqli->prepare("SELECT id FROM users WHERE username = ?");
+        $stmt->bind_param('s', $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
 //            exit();
 //      header("Location: login.php?username=" . $username);
-        setcookie('user', $newUser['id'], time() + (86400 * 30), "/");
+        setcookie('user', $row['id'], time() + (86400 * 30), "/");
         header("Location: home.html");
     }

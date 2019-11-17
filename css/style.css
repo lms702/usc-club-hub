@@ -1,9 +1,16 @@
+@font-face {
+    font-family: semiBold;
+    src: url("../resources/fonts/SourceSansPro-Semibold.ttf");
+}
+
 html, body {
     /*background-image: url("../resources/background.jpg");*/
     background-size: cover;
     text-align: center;
-    font-family: Arial;
+    /*font-family: Arial;*/
+    font-family: semiBold, 'Open Sans', sans-serif;
 }
+
 h1{
     text-shadow: 1px 1px black;
 }

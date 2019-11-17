@@ -1,5 +1,7 @@
 <?php
     if(!isset($_COOKIE['user_id'])){
+        var_dump($_COOKIE);
+//        exit();
         header("Location: register.php");
     }
 //        mysqli_report(MYSQLI_REPORT_ALL);
@@ -36,9 +38,9 @@
             </div>
         </div>
         <div class="row">
-            <label for="category" class="col-sm-3 col-form-label text-sm-right">A short description (max 65 characters)</label>
+            <label for="category" class="col-sm-3 col-form-label text-sm-right">A short description (max 35 characters)</label>
             <div class="col">
-                <input name="short_desc" id="short_desc" type="text" maxlength="65" placeholder="A place to meet friends!" class="form-control">
+                <input name="short_desc" id="short_desc" type="text" maxlength="35" placeholder="A place to meet friends!" class="form-control">
             </div>
         </div>
         <div class="row">
@@ -61,7 +63,7 @@
             </div>
         </div>
         <div class="row">
-            <label for="image" class="col-sm-3 col-form-label text-sm-right">Upload a club logo! (optional) THIS DOESN'T WORK YET</label>
+            <label for="image" class="col-sm-3 col-form-label text-sm-right">Upload a club logo!</label>
             <div class="col col-4">
                 <input id="image" type="file" class="form-control" name="image" accept="image/*">
             </div>
