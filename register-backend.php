@@ -43,5 +43,5 @@
 //            exit();
 //      header("Location: login.php?username=" . $username);
         setcookie('user', $row['id'], time() + (86400 * 30), "/");
-        header("Location: home.html");
+        header("Location: home.php");
     }

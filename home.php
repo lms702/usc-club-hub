@@ -102,17 +102,32 @@
 
 </script>
 
+<?php
+if(!isset($_COOKIE['user_id'])){
+    $btn1tag = 'Login';
+    $btn1link = 'login.php';
+    $btn2tag = 'Register';
+    $btn2link = 'register.php';
+    $midbtnlink = 'please_login.php';
+}
+else{
+    $btn1tag = 'Profile';
+    $btn1link = 'profile.php';
+    $btn2tag = 'Sign out';
+    $btn2link = 'signout.php';
+    $midbtnlink = 'add_club.php';
+}?>
 
 <div id="contain">
     <p>
-        <a href="login.php"><input class="btn btn-light" type = "button" value = "Login   " id = "login"></a> <br>
-        <a href="register.php"><input class="btn btn-light" type = "button" value = "Register" id = "register"></a>
+        <a href="<?php echo $btn1link; ?>"><input class="btn btn-light" type = "button" value = "<?php echo $btn1tag ?>" id = "login"></a> <br>
+        <a href="<?php echo $btn2link; ?>"><input class="btn btn-light" type = "button" value = "<?php echo $btn2tag; ?>" id = "register"></a>
     </p>
-    <h1 class = center>Welcome To Club Hub</h1>
-    <h1 class = center2>Find The Right Club For You!</h1>
+    <h1 style="font-size: 50px" class = center>Welcome To Club Hub</h1>
+    <h1 id="header2" class = center2>Find The Right Club For You!</h1>
     <br>
     <div class="center">
-        <a href="add_club.php">
+        <a href="<?php echo $midbtnlink; ?>">
 <!--            <label for="add" class="col col-2 control-label">Have a club to add?</label>-->
             <button type="button" id="add" class="btn btn-warning">Add your club here!</button>
         </a>

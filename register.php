@@ -34,7 +34,7 @@
 <body>
 <div class="row" id="spacer">
     <div class="col col-2">
-        <a href="home.html">
+        <a href="home.php">
             <img src="resources/duck_icon.png" width="100%">
         </a>
     </div>

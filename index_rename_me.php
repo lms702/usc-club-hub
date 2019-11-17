@@ -1,2 +1,2 @@
 <?php
-    header("Location: home.html");
+    header("Location: home.php");

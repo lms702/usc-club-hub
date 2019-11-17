@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="row">
-            <label for="category" class="col-sm-3 col-form-label text-sm-right">A short description (max 35 characters)</label>
+            <label for="category" class="col-sm-3 col-form-label text-sm-right">A short description <br>(max 35 characters)</label>
             <div class="col">
                 <input name="short_desc" id="short_desc" type="text" maxlength="35" placeholder="A place to meet friends!" class="form-control">
             </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="row">
             <label for="long_desc" class="col-sm-3 col-form-label text-sm-right">A complete description for your club: may
-                include links to your website / signup</label>
+                include links to your website / signup <br>(max 500 characters)</label>
             <div class="col">
 <!--                <input  type="text" maxlength="65" placeholder="A full bio here" class="form-control">-->
                 <textarea id="long_desc" name="long_desc" rows="6"  maxlength="500" class="form-control"
