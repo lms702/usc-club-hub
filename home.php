@@ -50,21 +50,6 @@
                 let shortDesc = club.short_desc;
                 let longDesc = club.long_desc;
                 let tile = $('<div class = "tile">');
-                tile.onclick = function(){
-                    let bigdiv = document.createElement('div');
-                    bigdiv.class = "bigdiv";
-                    bigdiv.style.backgroundColor = "black";
-                    bigdiv.style.color = "white";
-                    bigdiv.style.height = "500 px";
-                    bigdiv.style.width = "100%";
-                    let rows = this.parentNode.parentNode;
-                    bigdiv.append('<table><tr><td rowspan="1">&nbsp'+'<img src = "' + theImage + '"/>'
-                        + '</td><td>&nbsp <h1>'+ name +'</h1> <h5>'+ longDesc +'</h5></td></tr>');
-                    bigdiv.appendTo($('#' + rows));
-                    bigdiv.onclick = function(){
-                        bigdiv.remove();
-                    };
-                };
                 tile.appendTo(inner_row);
 
                 let tile_media = $('<div class = "tile__media">');
@@ -79,6 +64,17 @@
 
                 let details = $('<div class = "tile__details">');
                 details.appendTo(tile);
+
+                $(tile).on('click',function(){
+                    $.ajax({
+                        type: 'GET',
+                        url: 'add_favorite.php',
+                        data: {'club_id': club.id},
+                        success: function(){
+                            alert("Club successfully added to your favorites!");
+                        }
+                    });
+                });
 
                 let tile_title = $('<div class="tile__title">');
                 tile_title.text(name);
@@ -133,5 +129,6 @@ else{
         </a>
     </div>
     <script>funcReq(); </script>
+    <script src="js/home.js"></script>
 </div>
 </body>

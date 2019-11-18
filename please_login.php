@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <style>
-    background-image: url("resources/background.jpg");
+    body, html {
+        background-image: url("resources/background.jpg");
+    }
 </style>
 <body>
     <div id="spacer"></div>

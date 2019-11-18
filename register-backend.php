@@ -42,6 +42,6 @@
         $row = $result->fetch_assoc();
 //            exit();
 //      header("Location: login.php?username=" . $username);
-        setcookie('user', $row['id'], time() + (86400 * 30), "/");
+        setcookie('user_id', $row['id'], time() + (86400 * 30), "/");
         header("Location: home.php");
     }

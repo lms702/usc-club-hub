@@ -5,7 +5,7 @@
         echo "MySQL Connection Error: " . $mysqli->connect_error;
         exit();
     }
-    $result = $mysqli->query("SELECT clubs.name, categories.category, clubs.short_desc,clubs.long_desc, ".
+    $result = $mysqli->query("SELECT clubs.id, clubs.name, categories.category, clubs.short_desc,clubs.long_desc, ".
     "images.image_path FROM clubs, categories, images WHERE clubs.category_id = categories.id ".
     "AND clubs.image_id = images.id ORDER BY category;");
     $categories = [];
@@ -32,7 +32,8 @@
             'category' => $row['category'],
             'short_desc' => $row['short_desc'],
             'long_desc' => $row['long_desc'],
-            'image_path' => $row['image_path']
+            'image_path' => $row['image_path'],
+            'id' => $row['id']
         ];
         array_push($currentCategoryList, $club);
     }
