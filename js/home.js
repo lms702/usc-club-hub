@@ -55,14 +55,19 @@ function funcGen(data){
             details.appendTo(tile);
 
             $(tile).on('click',function(){
-                $.ajax({
-                    type: 'GET',
-                    url: 'add_favorite.php',
-                    data: {'club_id': club.id},
-                    success: function(){
-                        alert("Club successfully added to your favorites!");
-                    }
-                });
+                if(loggedIn) {
+                    $.ajax({
+                        type: 'GET',
+                        url: 'add_favorite.php',
+                        data: {'club_id': club.id},
+                        success: function () {
+                            alert("Club successfully added to your favorites!");
+                        }
+                    });
+                }
+                else{
+                    alert("You must be logged in to add a favorite!");
+                }
             });
 
             let tile_title = $('<div class="tile__title">');
