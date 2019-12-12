@@ -34,13 +34,8 @@ if(isset($_GET['error'])){
     }
 </style>
 <body>
+<?php require "nav.php";?>
 <div class="row" id="spacer">
-    <div class="col col-2">
-        <a href="home.php">
-            <img src="resources/duck_icon.png" width="100%">
-        </a>
-    </div>
-    <div class="col col-10"></div>
 </div>
 <div class="container" id="index-container">
     <br>

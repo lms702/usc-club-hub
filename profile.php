@@ -61,14 +61,8 @@ $favorites = $stmt->get_result();
     <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
 </head>
 <body>
-<div class="row" id="spacer">
-    <div class="col col-2">
-        <a href="home.php">
-            <img src="resources/duck_icon.png" width="100%">
-        </a>
-    </div>
-    <div class="col col-10"></div>
-</div>
+<?php require "nav.php";?>
+
 <div class="container" id="index-container">
     <div class="row">
         <div class="col" style="text-align: center">
@@ -83,10 +77,10 @@ $favorites = $stmt->get_result();
     </div>
     <?php while($row = $clubs_owned->fetch_assoc()): ?>
     <div class="row">
-        <div class="col col-3">
+        <div class="col col-12 col-lg-3">
             <img src="<?php echo $row['image_path']?>" alt=''>
         </div>
-        <div class="col col-9">
+        <div class="col col-12 col-lg-9">
             <h2>
                 <?php echo $row['name'] ?>
             </h2>
@@ -108,10 +102,10 @@ $favorites = $stmt->get_result();
         </div>
         <?php while($row = $favorites->fetch_assoc()): ?>
             <div class="row">
-                <div class="col col-3">
+                <div class="col col-12 col-lg-3">
                     <img src="<?php echo $row['image_path']?>" alt=''>
                 </div>
-                <div class="col col-9">
+                <div class="col col-12 col-lg-9">
                     <h2>
                         <?php echo $row['name'] ?>
                     </h2>

@@ -15,6 +15,8 @@
     }
 </style>
 <body>
+<?php require "nav.php"; ?>
+
     <div id="spacer"></div>
     <div class="container" id="index-container">
         <div style="height: 20%"></div>

@@ -50,7 +50,7 @@ body, html {
     margin: 0;
    /* background-color: #7aaae7;*/
    /* background-image: url("https://www.outsideonline.com/sites/default/files/styles/full-page/public/2019/09/11/specialized-creo-e-bike_h.jpg?itok=3ONg4ZCu");*/
-    background-image: url("http://cdn.cnn.com/cnnnext/dam/assets/181010131059-australia-best-beaches-cossies-beach-cocos3.jpg");
+    background-image: url("../resources/home.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -77,7 +77,7 @@ h1, .class {
 #contain {
     width: 100%;
 }
-.row {
+.roww {
     /*background-color: black;*/
     background-color: rgba(57, 57, 57, 0.63);
     background-image: url("https://www.transparenttextures.com/patterns/food.png");
@@ -86,7 +86,7 @@ h1, .class {
     width: 100%;
 
 }
-.row__inner {
+.roww__inner {
    // transition: 450ms -webkit-transform;
     transition: 450ms transform;
    // transition: 450ms transform, 450ms -webkit-transform;
@@ -98,8 +98,8 @@ h1, .class {
 .tile {
     position: relative;
     display: inline-block;
-    width: 300px;
-    height: 168.75px;
+    width: var(--tile-width);
+    height: var(--tile-height);
     margin-right: 10px;
     margin-left: 5px;
     margin-top: 23px;
@@ -110,8 +110,8 @@ h1, .class {
     transform-origin: left;
 }
 .tile__img {
-    width: 300px;
-    height: 168.75px;
+    width: var(--tile-width);
+    height: var(--tile-height);
     -o-object-fit: cover;
     object-fit: cover;
     margin-top: 10px;
@@ -139,17 +139,17 @@ h1, .class {
     padding-left: 10px;
     padding-top: 340px;
 }
-.row__inner:hover {
+.roww__inner:hover {
     -webkit-transform: translate3d(-62.5px, 0, 0);
     transform: translate3d(-62.5px, 0, 0);
 }
-.row__inner:hover .tile {
+.roww__inner:hover .tile {
     opacity: 0.6;
     /*background-color: black;*/
 }
-.row__inner:hover .tile:hover {
-     -webkit-transform: scale(1.5);
-     transform: scale(1.5);
+.roww__inner:hover .tile:hover {
+     /*-webkit-transform: scale(1.5);*/
+     transform: scale(var(--scale));
      opacity: 1;
 
  }
@@ -184,7 +184,7 @@ h1, .class {
     font-size: 20px;
 }
 
-.row__inner:hover .tile:hover .tile-text {
+.roww__inner:hover .tile:hover .tile-text {
     visibility: hidden;
 }
 
@@ -195,5 +195,24 @@ h1, .class {
     padding-top: 73.25px;
     padding-left: 10px;
     opacity: 1 !important;
+}
+:root{
+    --tile-width: 600px;
+    --tile-height: 337.5px;
+    --scale:1.2;
+}
+@media(min-width: 768px){
+    :root {
+        --scale: 1.2;
+        --tile-width: 450px;
+        --tile-height: 253.125px;
+    }
+}
+@media(min-width: 992px){
+    :root{
+        --scale: 1.5;
+        --tile-width: 300px;
+        --tile-height: 168.75px;
+    }
 }
 

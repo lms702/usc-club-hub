@@ -5,8 +5,12 @@
 
 html, body {
     /*background-image: url("../resources/background.jpg");*/
-    background-size: cover;
+    /*background-size: cover;*/
     text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     /*font-family: Arial;*/
     font-family: semiBold, 'Open Sans', sans-serif;
 }
@@ -23,11 +27,12 @@ h1{
     color: white;
     width: 70%;
     background: rgba(57, 67, 57, 0.6);
-    height: 400px;
-    /*padding: 15px;*/
+    /*height: 800px;*/
+    padding-bottom: 15px;
 }
 #index-container.div{
     text-align: center;
+    /*padding: 15px;*/
 }
 .link-btn{
     width: 50%;

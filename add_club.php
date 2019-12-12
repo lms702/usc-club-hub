@@ -2,7 +2,7 @@
     if(!isset($_COOKIE['user_id'])){
         var_dump($_COOKIE);
 //        exit();
-        header("Location: register.php");
+        header("Location: please_login.php");
     }
 //        mysqli_report(MYSQLI_REPORT_ALL);
     require("config.php");
@@ -25,6 +25,8 @@
     <link rel="stylesheet" type="text/css" href="css/addClubStyle.css">
 </head>
 <body>
+<?php require "nav.php"; ?>
+
 <div id="spacer"></div>
     <div id="header">
         <h1>Add a Club!</h1>
