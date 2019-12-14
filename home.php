@@ -15,7 +15,7 @@
     <div class="center">
         <a href="add_club.php">
 <!--            <label for="add" class="col col-2 control-label">Have a club to add?</label>-->
-            <button type="button" id="add" class="btn btn-warning">Add your club here!</button>
+            <button type="button" id="add" class="btn btn-outline-success my-2 my-sm-0">Add your club here!</button>
         </a>
     </div>
 </div>

@@ -15,7 +15,7 @@ else{
     $midbtnlink = 'add_club.php';
     ?><script>var loggedIn = true;</script><?php
 }?>
-<nav class="navbar navbar-expand navbar-light bg-light" style="background-color: #4cdfff;">
+<nav class="navbar navbar-expand navbar-light bg-light" >
     <a class="navbar-brand" href="#">
         <a href="home.php">
             <img src="resources/duckhub.png" style="height: 70px; width: auto;">
@@ -24,10 +24,16 @@ else{
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
+                <a class="nav-link" href="home.php">Home</a>
+            </li>
+            <li class="nav-item active">
                 <a class="nav-link" href="add_club.php">Add Club</a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="about.php">About</a>
+            </li>
         </ul>
-        <a href="<?php echo $btn1link ?>">
+        <a href="<?php echo $btn1link ?>" style="margin-right: 10px">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><?php echo $btn1tag ?></button>
         </a>
         <a href="<?php echo $btn2link ?>">
